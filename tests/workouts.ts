@@ -9,7 +9,7 @@ describe("workouts", () => {
     const program = anchor.workspace.workouts;
 
     it('Is Initialized', async () => {
-        await program.rpc.initialize("Welcome to Solana David!", {
+        await program.rpc.initialize("Welcome to Solana!", {
             accounts: {
                 workouts: workouts.publicKey,
                 user: provider.wallet.publicKey,
@@ -18,7 +18,7 @@ describe("workouts", () => {
             signers: [workouts]
         })
         const account = await program.account.workouts.fetch(workouts.publicKey);
-       // assert.ok(account.greeting === "Welcome to Solana!");    
+       assert.ok(account.greeting = "LFG!!");    
     })
 
     it('Checks Workout Goals', async () => {
